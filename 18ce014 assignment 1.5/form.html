@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Student Feedback Form..</title>
+	<style>
+		fieldset {
+			width: 500 px;
+			text-align: left;
+			border-radius: 4px;
+		}
+
+		form {
+			font-family: Calibri;
+			border-radius: 5px;
+		}
+
+		input[type=text],
+		input[type=email],
+		select,
+		textarea {
+			width: 100%;
+			padding: 5px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		input[type=radio] {
+			margin-left: 30px;
+		}
+
+		select {
+			width: 100%;
+			padding: 5px 20px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+
+		}
+
+		input[type=submit],
+		[type=reset] {
+			background-color: #ff8918;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+			background-color: #A2A4AB;
+		}
+
+		input[type=reset]:hover {
+			background-color: #A2A4AB;
+		}
+
+		div {
+			border-radius: 5px;
+			padding: 20px;
+		}
+	</style>
+	<script>
+
+		function amount1() {
+			var e = document.getElementById("no_of_part1");
+			var result1 = e.options[e.selectedIndex].value;
+
+			document.getElementById("result").innerHTML = result1;
+		}
+	</script>
+</head>
+
+<body bgcolor="#DBD8EA">
+	<div align="center">
+		<center>
+			<form action="connectMain2.php" method="post">
+				<fieldset style="background-color: #ecf0f1;">
+					<legend><b>
+							<font size="5px">Workshop Registration</font>
+						</b></legend>
+					<div>
+						<font size="3px">Thank you for taking interest in participating in this workshop.
+							Please fill in the registration form below so we can save you a seat.</font>
+						<hr>
+
+
+						<b>NAME:</b>
+						<input type="text" style="width:40%" name="firstName" required="" placeholder="First Name">
+						<input type="text" style="width:40%" name="lastName" required="" placeholder="Last Name">
+						<br><br>
+
+						<b>Email : </b>
+						<input type="email" style="width:100%" name="email" required="" placeholder="ex: abc@xyz.com">
+
+						<b>Gender : </b>
+						<input type="radio" name="Gender" value="Male">Male
+						<input type="radio" name="Gender" value="Female">Female
+						<br><br>
+
+						<label for="dob"><b>Date Of Birth:</b></label>
+						<input type="date" name="date2" style="width:30%" id="dob">
+						<br><br>
+
+						<b>Address:</b>
+						<textarea name="Address" name="address" rows="4" cols="25"></textarea>
+
+						<lable id="lableid"><b>Title :</b>
+						<input type="text" style="width:70%" required="" name="title" placeholder="Title of Workshop">
+						<br><br>
+
+						<lable id="lableid"><b>Participation Type:</b></lable>
+						<select id="no_of_part1" style="width:20%" onchange="amount1()">
+							<option>students</option>
+							<option>faculty members</option>
+							<option>professional</option>
+							<option>company / firm representatives</option>
+						</select>
+						<br>
+
+						<lable id="lableid"><b>Participation Fee :</b></lable>
+						Workshop : <b>$100</b>
+						<br>
+						<br>
+
+						No. of Participation:
+						<select id="no_of_part1" style="width:20%" onchange="amount1()">
+							<option value="100$" selected="">1</option>
+							<option value="200$">2</option>
+							<option value="300$">3</option>
+							<option value="400$">4</option>
+							<option value="500$">5</option>
+							<option value="600$">6</option>
+						</select>
+						<br>
+
+						<b style="margin-left: 30px">Total: <b id="result" style="margin-left: 20px">0 $</b></b>
+						<br><br>
+
+						<b>Do you have any special requirements or suggestions?</b>
+						<textarea name="Address" rows="4" cols="100"></textarea>
+						<hr>
+						<center>
+							<input type="submit" name="submit" value="Submit" style="width:30%">
+							<input type="reset" name="reset" value="Reset" style="width:30%">
+						</center>
+					</div>
+				</fieldset>
+
+			</form>
+		</center>
+	</div>
+</body>
+
+</html>
